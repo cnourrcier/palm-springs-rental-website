@@ -1,0 +1,105 @@
+.accommodations-page {
+    background-color: var(--ps-sand);
+    padding: 80px 0;
+}
+
+.accommodations-page h1 {
+    font-size: 36px;
+    color: var(--ps-green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 18px;
+    color: var(--ps-green);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.room-card {
+    background-color: var(--ps-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+}
+
+.room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-content {
+    padding: 20px;
+}
+
+.room-content h3 {
+    font-size: 24px;
+    color: var(--ps-green);
+    margin-bottom: 10px;
+}
+
+.room-content p {
+    color: var(--ps-green);
+}
+
+.amenities {
+    background-color: var(--ps-white);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.amenities h2 {
+    font-size: 28px;
+    color: var(--ps-green);
+    margin-bottom: 20px;
+}
+
+.amenities ul {
+    list-style-type: none;
+    padding-left: 0;
+    columns: 2;
+}
+
+.amenities li {
+    color: var(--ps-green);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.amenities li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ps-terracotta);
+}
+
+@media (max-width: 768px) {
+    .accommodations-page h1 {
+        font-size: 28px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .amenities ul {
+        columns: 1;
+    }
+}
