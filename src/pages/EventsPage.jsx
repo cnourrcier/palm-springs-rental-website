@@ -39,6 +39,24 @@ const EventsPage = () => {
                         image="https://via.placeholder.com/400x300.png?text=Placeholder"
                         link="/events/corporate"
                     />
+                    <EventCard
+                        title="Reunions"
+                        description="Reunite with friends and family...continued."
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
+                        link="/events/corporate"
+                    />
+                    <EventCard
+                        title="Dinner Parties"
+                        description="text here."
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
+                        link="/events/corporate"
+                    />
+                    <EventCard
+                        title="Private Tours"
+                        description="text here."
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
+                        link="/events/corporate"
+                    />
                 </div>
 
                 <div className="custom-events">

@@ -10,7 +10,7 @@ const Header = () => {
       <nav className="container">
         <div className="header-content">
           <div className="logo">
-            <Link to="/">Palm Springs Retreat</Link>
+            <Link to="/">Clark Gable Estate</Link>
           </div>
           <div className="nav-links">
             <Link to="/about">About</Link>

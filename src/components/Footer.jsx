@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-section">
-                        <h3>Palm Springs Historic Retreat</h3>
+                        <h3>Clark Gable Estate</h3>
                         <p>Experience the glamour of Old Hollywood in our luxurious Palm Springs rental property.</p>
                     </div>
                     <div className="footer-section">
@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy; 2024 Palm Springs Historic Retreat. All rights reserved.</p>
+                    <p>&copy; 2024 Clark Gable Estate. All rights reserved.</p>
                 </div>
             </div>
         </footer>

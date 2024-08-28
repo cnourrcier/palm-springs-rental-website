@@ -20,7 +20,7 @@ const AccommodationsPage = () => {
 
                 <div className="room-grid">
                     <RoomCard
-                        name="The Sinatra Suite"
+                        name="The Gable Suite"
                         description="A spacious master suite featuring a king-size bed, vintage record player, and private balcony overlooking the pool."
                         image="https://via.placeholder.com/400x300.png?text=Placeholder"
                     />
@@ -37,14 +37,16 @@ const AccommodationsPage = () => {
                 </div>
 
                 <div className="amenities">
-                    <h2>Property Amenities</h2>
+                    <h2>Property Amenities and Features</h2>
                     <ul>
-                        <li>Heated swimming pool and spa</li>
+                        <li>Swimming pool and pool cabana</li>
                         <li>Outdoor kitchen and dining area</li>
-                        <li>Lush desert gardens</li>
-                        <li>Private screening room</li>
-                        <li>Fully equipped fitness center</li>
-                        <li>24/7 concierge service</li>
+                        <li>Lush gardens and mature palm trees</li>
+                        <li>Pickle Ball Court adaptable for outdoor events</li>
+                        <li>Private casita above Garage</li>
+                        <li>Gated, private, secluded</li>
+                        <li>Walking distance to Downtown Palm Springs</li>
+                        <li>Pool table custom-made for Kirk Douglas </li>
                     </ul>
                 </div>
             </div>
