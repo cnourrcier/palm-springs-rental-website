@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './GalleryPage.css';
 
 const images = [
-  { id: 1, src: "/api/placeholder/800/600", alt: "Exterior view of the house" },
-  { id: 2, src: "/api/placeholder/800/600", alt: "Living room with vintage decor" },
-  { id: 3, src: "/api/placeholder/800/600", alt: "Pool area with palm trees" },
-  { id: 4, src: "/api/placeholder/800/600", alt: "Master bedroom" },
-  { id: 5, src: "/api/placeholder/800/600", alt: "Dining area with view" },
-  { id: 6, src: "/api/placeholder/800/600", alt: "Garden path" },
+  { id: 1, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Exterior view of the house" },
+  { id: 2, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Living room with vintage decor" },
+  { id: 3, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Pool area with palm trees" },
+  { id: 4, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Master bedroom" },
+  { id: 5, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Dining area with view" },
+  { id: 6, src: "https://via.placeholder.com/800x600.png?text=Placeholder", alt: "Garden path" },
 ];
 
 const GalleryPage = () => {

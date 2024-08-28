@@ -8,7 +8,7 @@ const AboutPage = () => {
                 <h1>About Our Historic Palm Springs Retreat</h1>
                 <div className="about-content">
                     <div className="about-image">
-                        <img src="/api/placeholder/600/400" alt="Historic Palm Springs House" />
+                        <img src="https://via.placeholder.com/600x400.png?text=Placeholder" alt="Historic Palm Springs House" />
                     </div>
                     <div className="about-text">
                         <h2>A Legacy of Glamour and Relaxation</h2>

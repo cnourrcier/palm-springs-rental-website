@@ -20,21 +20,21 @@ const BlogPage = () => {
             title: "Top 5 Hidden Gems in Palm Springs",
             excerpt: "Discover the lesser-known attractions that make Palm Springs a unique destination...",
             date: "July 1, 2023",
-            image: "/api/placeholder/400/300",
+            image: "https://via.placeholder.com/400x300.png?text=Placeholder",
             slug: "top-5-hidden-gems"
         },
         {
             title: "A Day in the Life: Palm Springs Edition",
             excerpt: "Experience the perfect Palm Springs day, from sunrise hikes to starlit dinners...",
             date: "June 15, 2023",
-            image: "/api/placeholder/400/300",
+            image: "https://via.placeholder.com/400x300.png?text=Placeholder",
             slug: "day-in-the-life"
         },
         {
             title: "The History of Mid-Century Modern Architecture in Palm Springs",
             excerpt: "Explore the architectural movement that shaped Palm Springs' iconic skyline...",
             date: "May 30, 2023",
-            image: "/api/placeholder/400/300",
+            image: "https://via.placeholder.com/400x300.png?text=Placeholder",
             slug: "midcentury-modern-architecture"
         }
     ];

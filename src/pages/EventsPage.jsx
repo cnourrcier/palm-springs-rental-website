@@ -24,19 +24,19 @@ const EventsPage = () => {
                     <EventCard
                         title="Weddings"
                         description="Say 'I do' in a setting that blends timeless elegance with Palm Springs charm."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                         link="/events/weddings"
                     />
                     <EventCard
                         title="Photoshoots"
                         description="Capture stunning visuals in our picturesque property, perfect for fashion and film."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                         link="/events/photoshoots"
                     />
                     <EventCard
                         title="Corporate Events"
                         description="Inspire creativity and foster team building in our unique, historic setting."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                         link="/events/corporate"
                     />
                 </div>

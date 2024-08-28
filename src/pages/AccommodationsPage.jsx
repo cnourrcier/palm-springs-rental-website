@@ -22,17 +22,17 @@ const AccommodationsPage = () => {
                     <RoomCard
                         name="The Sinatra Suite"
                         description="A spacious master suite featuring a king-size bed, vintage record player, and private balcony overlooking the pool."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                     />
                     <RoomCard
                         name="The Hollywood Glamour Room"
                         description="Channel your inner starlet in this art deco-inspired room with a queen-size bed and luxury vanity area."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                     />
                     <RoomCard
                         name="The Palm Oasis Cabana"
                         description="A private poolside cabana with a queen-size bed, perfect for those seeking a more secluded experience."
-                        image="/api/placeholder/400/300"
+                        image="https://via.placeholder.com/400x300.png?text=Placeholder"
                     />
                 </div>
 
