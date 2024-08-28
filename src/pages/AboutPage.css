@@ -1,83 +1,132 @@
 .about-page {
-    background-color: var(--ps-white);
-    padding: 80px 0;
+  background-color: var(--ps-white);
+  padding: 80px 0;
 }
 
 .about-page h1 {
-    font-size: 36px;
-    color: var(--ps-green);
-    text-align: center;
-    margin-bottom: 40px;
+  font-size: 36px;
+  color: var(--ps-green);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.about-content {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 60px;
+.about-page h2 {
+  font-size: 28px;
+  color: var(--ps-terracotta);
+  margin-bottom: 20px;
 }
 
-.about-image {
-    flex: 1;
+.about-page h3 {
+  font-size: 24px;
+  color: var(--ps-green);
+  margin-bottom: 15px;
 }
 
-.about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.about-page p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ps-green);
+  margin-bottom: 20px;
 }
 
-.about-text {
-    flex: 1;
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
-.about-text h2 {
-    font-size: 28px;
-    color: var(--ps-green);
-    margin-bottom: 20px;
+.image-gallery img {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about-text h3 {
-    font-size: 24px;
-    color: var(--ps-green);
-    margin-top: 30px;
-    margin-bottom: 15px;
+.timeline {
+  margin-bottom: 40px;
 }
 
-.about-text p {
-    color: var(--ps-green);
-    margin-bottom: 20px;
-    line-height: 1.6;
+.timeline-item {
+  display: flex;
+  margin-bottom: 20px;
 }
 
-.about-text ul {
-    list-style-type: none;
-    padding-left: 0;
+.timeline-year {
+  font-weight: bold;
+  min-width: 80px;
+  color: var(--ps-terracotta);
 }
 
-.about-text li {
-    color: var(--ps-green);
-    margin-bottom: 10px;
+.timeline-content {
+  flex-grow: 1;
 }
 
-/* .timeline {
-    Add styles for the timeline here 
-} */
+.features-section ul,
+.celebrity-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.features-section li,
+.celebrity-section li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.features-section li:before,
+.celebrity-section li:before {
+  content: '•';
+  color: var(--ps-terracotta);
+  position: absolute;
+  left: 0;
+}
+
+.quote-section {
+  background-color: var(--ps-sand);
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.quote-section blockquote {
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ps-green);
+  margin: 0;
+}
+
+.quote-section footer {
+  margin-top: 10px;
+  font-weight: bold;
+}
 
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
+  .about-page h1 {
+    font-size: 28px;
+  }
 
-    .about-page h1 {
-        font-size: 28px;
-    }
+  .about-page h2 {
+    font-size: 24px;
+  }
 
-    .about-text h2 {
-        font-size: 24px;
-    }
+  .about-page h3 {
+    font-size: 20px;
+  }
 
-    .about-text h3 {
-        font-size: 20px;
-    }
+  .image-gallery {
+    flex-direction: column;
+  }
+
+  .image-gallery img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-year {
+    margin-bottom: 5px;
+  }
 }
