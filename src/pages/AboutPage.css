@@ -29,16 +29,64 @@
   margin-bottom: 20px;
 }
 
-.image-gallery {
+.newspaper-clippings {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }
 
-.image-gallery img {
-  width: 30%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.newspaper-clipping {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  transform: rotate(var(--rotation));
+  transition: transform 0.3s ease;
+}
+
+.newspaper-clipping:nth-child(1) {
+  --rotation: -3deg;
+}
+
+.newspaper-clipping:nth-child(2) {
+  --rotation: 2deg;
+}
+
+.newspaper-clipping:nth-child(3) {
+  --rotation: -2deg;
+}
+
+.newspaper-clipping:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 1;
+}
+
+.newspaper-clipping img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  filter: sepia(20%) contrast(1.1);
+}
+
+.newspaper-clipping::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background:
+    linear-gradient(45deg, transparent 10px, #f0e6d2 0) bottom left,
+    linear-gradient(-45deg, transparent 10px, #f0e6d2 0) bottom right,
+    linear-gradient(135deg, transparent 10px, #f0e6d2 0) top left,
+    linear-gradient(-135deg, transparent 10px, #f0e6d2 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .timeline {
@@ -81,6 +129,40 @@
   left: 0;
 }
 
+.celebrity-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.celebrity-image {
+  width: calc(33.333% - 20px);
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.celebrity-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.celebrity-image img:hover {
+  transform: scale(1.05);
+}
+
+.celebrity-image p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--ps-green);
+  font-weight: bold;
+}
+
 .quote-section {
   background-color: var(--ps-sand);
   padding: 40px;
@@ -117,16 +199,22 @@
     flex-direction: column;
   }
 
-  .image-gallery img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
   .timeline-item {
     flex-direction: column;
   }
 
   .timeline-year {
     margin-bottom: 5px;
+  }
+
+  .celebrity-image {
+    width: calc(50% - 20px);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .celebrity-image {
+    width: 100%;
   }
 }

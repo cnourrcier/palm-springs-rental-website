@@ -8,20 +8,42 @@ const TimelineItem = ({ year, event }) => (
   </div>
 );
 
+const NewspaperClipping = ({ imageSrc, alt }) => (
+  <div className='newspaper-clipping'>
+    <img src={imageSrc} alt={alt} />
+  </div>
+);
+
+const CelebrityImage = ({ imageSrc, name }) => (
+  <div className='celebrity-image'>
+    <img src={imageSrc} alt={name} />
+    <p>{name}</p>
+  </div>
+)
+
 const AboutPage = () => {
+  const celebrities = [
+    { name: "Clark Gable", image: "https://via.placeholder.com/300x400.png?text=Clark+Gable" },
+    { name: "Carole Lombard", image: "https://via.placeholder.com/300x400.png?text=Carole+Lombard" },
+    { name: "Bing Crosby", image: "https://via.placeholder.com/300x400.png?text=Bing+Crosby" },
+    { name: "Sammy Davis Jr.", image: "https://via.placeholder.com/300x400.png?text=Sammy+Davis+Jr." },
+    { name: "Maurice Chevalier", image: "https://via.placeholder.com/300x400.png?text=Maurice+Chevalier" },
+    { name: "Dan Kimball", image: "https://via.placeholder.com/300x400.png?text=Dan+Kimball" },
+  ];
+
   return (
     <div className="about-page">
       <div className="container">
         <h1>About Clark Gable Estate</h1>
-        
+
         <section className="history-section">
           <h2>Our Rich History</h2>
           <p>Established in 1925, the Clark Gable Estate is the oldest home in Old Las Palmas, Palm Springs. This Spanish Colonial Revival estate was created by Master Architect McNeal Swasey for Los Angeles fashion designer and importer Mrs. Agnes Swobdi-Meade during the Roaring Twenties.</p>
-          
-          <div className="image-gallery">
-            <img src="https://via.placeholder.com/400x300.png?text=1920s+Estate" alt="1920s Estate" />
-            <img src="https://via.placeholder.com/400x300.png?text=Spanish+Colonial+Revival" alt="Spanish Colonial Revival" />
-            <img src="https://via.placeholder.com/400x300.png?text=Clark+Gable+%26+Carole+Lombard" alt="Clark Gable & Carole Lombard" />
+
+          <div className="newspaper-clippings">
+            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+1" alt="Newspaper Clipping 1" />
+            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+2" alt="Newspaper Clipping 2" />
+            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+3" alt="Newspaper Clipping 3" />
           </div>
 
           <h3>Timeline</h3>
@@ -52,15 +74,11 @@ const AboutPage = () => {
         <section className="celebrity-section">
           <h2>Celebrity Residents and Visitors</h2>
           <p>The Clark Gable Estate has been home to and visited by numerous celebrities over the years, including:</p>
-          <ul>
-            <li>Clark Gable and Carole Lombard</li>
-            <li>Bing and Dixie Crosby</li>
-            <li>Sammy Davis Jr.</li>
-            <li>Maurice Chevalier</li>
-            <li>Dan Kimball (Secretary of the Navy) and Doris Fleeson (Syndicated Columnist)</li>
-            <li>Bishop Joseph Dougherty of Yakima</li>
-            <li>Joel Douglas (son of Kirk Douglas)</li>
-          </ul>
+          <div className='celebrity-gallery'>
+            {celebrities.map((celebrity, index) => (
+              <CelebrityImage key={index} imageSrc={celebrity.image} name={celebrity.name} />
+            ))}
+          </div>
         </section>
 
         <section className="legacy-section">
