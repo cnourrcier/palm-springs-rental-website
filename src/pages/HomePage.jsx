@@ -18,7 +18,13 @@ const HomePage = () => {
         <div className="home-page">
             <div className="hero-section">
                 {videoUrl ? (
-                    <video autoPlay muted loop className="hero-video">
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="hero-video"
+                    >
                         <source src={videoUrl} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
