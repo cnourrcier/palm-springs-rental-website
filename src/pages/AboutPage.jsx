@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AboutPage.css';
 
 const TimelineItem = ({ year, event, imageSrc }) => (
@@ -56,16 +56,34 @@ const AboutPage = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setItemsToShow(1);
+      } else if (window.innerWidth <= 1200) {
+        setItemsToShow(2);
+      } else {
+        setItemsToShow(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollTimeline = (direction) => {
     if (direction === 'left' && currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-    } else if (direction === 'right' && currentIndex < timelineEvents.length - 3) {
+    } else if (direction === 'right' && currentIndex < timelineEvents.length - itemsToShow) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
-  const visibleEvents = timelineEvents.slice(currentIndex, currentIndex + 3);
+  const visibleEvents = timelineEvents.slice(currentIndex, currentIndex + itemsToShow);
 
   const celebrities = [
     { name: "Clark Gable", image: "https://via.placeholder.com/300x400.png?text=Clark+Gable" },
@@ -102,7 +120,7 @@ const AboutPage = () => {
             <button
               className="timeline-nav-button right"
               onClick={() => scrollTimeline('right')}
-              disabled={currentIndex === timelineEvents.length - 3}
+              disabled={currentIndex === timelineEvents.length - itemsToShow}
             >
               &gt;
             </button>
