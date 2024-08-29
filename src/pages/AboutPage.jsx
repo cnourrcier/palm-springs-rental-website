@@ -26,22 +26,22 @@ const AboutPage = () => {
     {
       year: "1925",
       event: "Estate built by McNeal Swasey for Agnes Swobdi-Meade",
-      image: "https://via.placeholder.com/300x200.png?text=1925+Estate+Built"
+      image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_PRODUCT_ENV}/image/upload/v1724950168/Clark%20Gable%20Estate%20Website/ClarkGableEstate1925_bqdmbp.jpg`
     },
     {
       year: "1930s-40s",
       event: "Clark Gable and Carole Lombard's desert hideaway",
-      image: "https://via.placeholder.com/300x200.png?text=Gable+and+Lombard"
+      image: "https://via.placeholder.com/300x200.png?text=Kimball+and+Fleeson"
     },
     {
       year: "1950s-60s",
       event: "Home to Dan Kimball and Doris Fleeson",
-      image: "https://via.placeholder.com/300x200.png?text=Kimball+and+Fleeson"
+      image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_PRODUCT_ENV}/image/upload/v1724950164/Clark%20Gable%20Estate%20Website/DanKimball_n09alo.jpg`
     },
     {
       year: "1969-78",
       event: "Residence of Shar Cracraft, Editor of Palm Springs Life Magazine",
-      image: "https://via.placeholder.com/300x200.png?text=Shar+Cracraft"
+      image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_PRODUCT_ENV}/image/upload/v1724950503/Clark%20Gable%20Estate%20Website/SharCracraft_zkyjxj.jpg`
     },
     {
       year: "2000s",
@@ -51,7 +51,7 @@ const AboutPage = () => {
     {
       year: "2015",
       event: "Clark Gable Estate Garden Party 'Gable Awards'",
-      image: "https://via.placeholder.com/300x200.png?text=Gable+Awards"
+      image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_PRODUCT_ENV}/image/upload/v1724950348/Clark%20Gable%20Estate%20Website/GardenParty_c3viyw.png`
     }
   ];
 
