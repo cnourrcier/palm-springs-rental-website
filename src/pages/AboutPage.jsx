@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AboutPage.css';
 
-const TimelineItem = ({ year, event }) => (
+const TimelineItem = ({ year, event, imageSrc }) => (
   <div className="timeline-item">
-    <div className="timeline-year">{year}</div>
-    <div className="timeline-content">{event}</div>
-  </div>
-);
-
-const NewspaperClipping = ({ imageSrc, alt }) => (
-  <div className='newspaper-clipping'>
-    <img src={imageSrc} alt={alt} />
+    <div className="newspaper-clipping">
+      <img src={imageSrc} alt={`${year} event`} />
+    </div>
+    <div className="timeline-content">
+      <div className="timeline-year">{year}</div>
+      <div className="timeline-event">{event}</div>
+    </div>
   </div>
 );
 
@@ -22,6 +21,52 @@ const CelebrityImage = ({ imageSrc, name }) => (
 )
 
 const AboutPage = () => {
+
+  const timelineEvents = [
+    {
+      year: "1925",
+      event: "Estate built by McNeal Swasey for Agnes Swobdi-Meade",
+      image: "https://via.placeholder.com/300x200.png?text=1925+Estate+Built"
+    },
+    {
+      year: "1930s-40s",
+      event: "Clark Gable and Carole Lombard's desert hideaway",
+      image: "https://via.placeholder.com/300x200.png?text=Gable+and+Lombard"
+    },
+    {
+      year: "1950s-60s",
+      event: "Home to Dan Kimball and Doris Fleeson",
+      image: "https://via.placeholder.com/300x200.png?text=Kimball+and+Fleeson"
+    },
+    {
+      year: "1969-78",
+      event: "Residence of Shar Cracraft, Editor of Palm Springs Life Magazine",
+      image: "https://via.placeholder.com/300x200.png?text=Shar+Cracraft"
+    },
+    {
+      year: "2000s",
+      event: "Hosted political fundraisers for Rep. Mary Bono",
+      image: "https://via.placeholder.com/300x200.png?text=Mary+Bono+Fundraisers"
+    },
+    {
+      year: "2015",
+      event: "Clark Gable Estate Garden Party 'Gable Awards'",
+      image: "https://via.placeholder.com/300x200.png?text=Gable+Awards"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollTimeline = (direction) => {
+    if (direction === 'left' && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else if (direction === 'right' && currentIndex < timelineEvents.length - 3) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const visibleEvents = timelineEvents.slice(currentIndex, currentIndex + 3);
+
   const celebrities = [
     { name: "Clark Gable", image: "https://via.placeholder.com/300x400.png?text=Clark+Gable" },
     { name: "Carole Lombard", image: "https://via.placeholder.com/300x400.png?text=Carole+Lombard" },
@@ -40,20 +85,27 @@ const AboutPage = () => {
           <h2>Our Rich History</h2>
           <p>Established in 1925, the Clark Gable Estate is the oldest home in Old Las Palmas, Palm Springs. This Spanish Colonial Revival estate was created by Master Architect McNeal Swasey for Los Angeles fashion designer and importer Mrs. Agnes Swobdi-Meade during the Roaring Twenties.</p>
 
-          <div className="newspaper-clippings">
-            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+1" alt="Newspaper Clipping 1" />
-            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+2" alt="Newspaper Clipping 2" />
-            <NewspaperClipping imageSrc="https://via.placeholder.com/300x200.png?text=Newspaper+Clipping+3" alt="Newspaper Clipping 3" />
-          </div>
-
           <h3>Timeline</h3>
-          <div className="timeline">
-            <TimelineItem year="1925" event="Estate built by McNeal Swasey for Agnes Swobdi-Meade" />
-            <TimelineItem year="1930s-40s" event="Clark Gable and Carole Lombard's desert hideaway" />
-            <TimelineItem year="1950s-60s" event="Home to Dan Kimball (Secretary of the Navy) and Doris Fleeson (Syndicated Columnist)" />
-            <TimelineItem year="1969-78" event="Residence of Shar Cracraft, Editor of Palm Springs Life Magazine" />
-            <TimelineItem year="2000s" event="Hosted political fundraisers for Rep. Mary Bono" />
-            <TimelineItem year="2015" event="Clark Gable Estate Garden Party 'Gable Awards'" />
+          <div className="timeline-container">
+            <button
+              className="timeline-nav-button left"
+              onClick={() => scrollTimeline('left')}
+              disabled={currentIndex === 0}
+            >
+              &lt;
+            </button>
+            <div className="timeline">
+              {visibleEvents.map((event, index) => (
+                <TimelineItem key={currentIndex + index} year={event.year} event={event.event} imageSrc={event.image} />
+              ))}
+            </div>
+            <button
+              className="timeline-nav-button right"
+              onClick={() => scrollTimeline('right')}
+              disabled={currentIndex === timelineEvents.length - 3}
+            >
+              &gt;
+            </button>
           </div>
         </section>
 

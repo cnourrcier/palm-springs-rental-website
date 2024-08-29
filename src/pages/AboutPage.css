@@ -29,40 +29,51 @@
   margin-bottom: 20px;
 }
 
-.newspaper-clippings {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.timeline-container {
+  position: relative;
   margin: 40px 0;
+  overflow: hidden;
 }
 
-.newspaper-clipping {
-  width: 300px;
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  transition: transform 0.5s ease;
+}
+
+/* .timeline::-webkit-scrollbar {
+  display: none;
+} */
+
+.timeline-item {
+  flex: 0 0 calc(33.333% - 20px);
+  max-width: 300px;
+  text-align: center;
+}
+
+.timeline-item .newspaper-clipping {
+  width: 100%;
   height: 200px;
-  margin: 20px;
+  margin-bottom: 20px;
   transform: rotate(var(--rotation));
   transition: transform 0.3s ease;
 }
 
-.newspaper-clipping:nth-child(1) {
+.timeline-item:nth-child(odd) .newspaper-clipping {
   --rotation: -3deg;
 }
 
-.newspaper-clipping:nth-child(2) {
-  --rotation: 2deg;
+.timeline-item:nth-child(even) .newspaper-clipping {
+  --rotation: 3deg;
 }
 
-.newspaper-clipping:nth-child(3) {
-  --rotation: -2deg;
-}
-
-.newspaper-clipping:hover {
+.timeline-item .newspaper-clipping:hover {
   transform: rotate(0deg) scale(1.05);
   z-index: 1;
 }
 
-.newspaper-clipping img {
+.timeline-item .newspaper-clipping img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -71,7 +82,7 @@
   filter: sepia(20%) contrast(1.1);
 }
 
-.newspaper-clipping::before {
+.timeline-item .newspaper-clipping::before {
   content: '';
   position: absolute;
   top: -10px;
@@ -89,24 +100,47 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-.timeline {
-  margin-bottom: 40px;
-}
-
-.timeline-item {
-  display: flex;
-  margin-bottom: 20px;
-}
-
 .timeline-year {
   font-weight: bold;
-  min-width: 80px;
+  font-size: 24px;
   color: var(--ps-terracotta);
+  margin-bottom: 10px;
 }
 
-.timeline-content {
-  flex-grow: 1;
+.timeline-event {
+  font-size: 16px;
+  color: var(--ps-green);
 }
+
+.timeline-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--ps-sand);
+  border: none;
+  color: var(--ps-green);
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline-nav-button:hover:not(:disabled) {
+  background-color: var(--ps-terracotta);
+  color: var(--ps-white);
+}
+
+.timeline-nav-button.left {
+  left: 10px;
+}
+
+.timeline-nav-button.right {
+  right: 10px;
+}
+
 
 .features-section ul,
 .celebrity-section ul {
@@ -195,16 +229,8 @@
     font-size: 20px;
   }
 
-  .image-gallery {
-    flex-direction: column;
-  }
-
   .timeline-item {
-    flex-direction: column;
-  }
-
-  .timeline-year {
-    margin-bottom: 5px;
+    flex: 0 0 calc(50% - 20px);
   }
 
   .celebrity-image {
@@ -214,6 +240,10 @@
 }
 
 @media (max-width: 480px) {
+  .timeline-item {
+    flex: 0 0 100%;
+  }
+
   .celebrity-image {
     width: 100%;
   }
